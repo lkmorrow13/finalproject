@@ -1,0 +1,12 @@
+<div class="puppy card col-3" id="puppy-<%= puppy.id %>">
+	<img src="" alt="" class="card-img-top">
+	<div class="card-body">
+     <% if puppy.images.attached? %>
+         <%= image_tag puppy.images[0], class: 'card-img-top cardimagesize' %>
+     <% end %>
+		<h3 class="card-title"><%= puppy.name %></h3>
+		<h5 class="card-text">Birthday: <%= puppy.birthday %></h5>
+		<h5 class="card-text"><%= puppy.info %></h5>
+	</div>
+	<%= link_to "delete", puppy, method: :delete, remote: true, class: 'delete-puppy-link' %>
+</div>
