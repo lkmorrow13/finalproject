@@ -1,0 +1,38 @@
+<%= form_with model: Puppy.new, id: 'puppy-new-form', data: {'parsley-validate': ''} do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :info %><br />
+    <%= f.text_area :info %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.datetime_select :birthday %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :images, multiple: true, class: 'form-control-file btn btn-primary' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Puppy" %>
+  </div>
+<% end %>
+
+<div class="container">
+  <div class="puppies row justify-content-center greyBackground">
+    <% if @puppies.present? %>
+    	<%= render @puppies %>
+		<% end %>
+  </div>
+</div>
