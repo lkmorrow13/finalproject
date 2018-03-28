@@ -45,6 +45,6 @@ class PuppiesController < ApplicationController
   private
 
   def puppy_params
-    params.require(:puppy).permit(:name, :cost, :info, :birthday, images:[])
+    params.require(:puppy).permit(:name, :cost, :info, :birthday, :parent_id, images:[])
   end
 end
