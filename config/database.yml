@@ -22,4 +22,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: rockydales
+  username: lgbennion
+  password: <%= ENV['ROCKYDALES_DB_PASSWORD'] %>
