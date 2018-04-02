@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.2'
 
+gem 'aws-sdk-s3', require: false
 gem 'pg', group: :production
 gem 'devise'
 gem 'jquery-rails'
