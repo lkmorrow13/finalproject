@@ -19,6 +19,11 @@
     <%= f.datetime_select :birthday %>
   </div>
 
+  <div class="field">
+    <%= f.label :parent %><br />
+    <%= f.collection_select :parent_id, Puppy.where(parent_id: nil), :id, :name, {prompt: 'none'}, {class: ""} %>
+  </div>
+
   <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :images, multiple: true, class: 'form-control-file btn btn-primary' %>
